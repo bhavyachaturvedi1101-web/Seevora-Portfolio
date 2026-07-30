@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Seevora — AI Automation for Indian Businesses</title>
+  <title>Seevora — Custom AI SaaS & Automation for Businesses</title>
   <meta name="description" content="Seevora — Custom AI automation, WhatsApp bots, voice agents & booking systems for Indian businesses. Deploy in 5 days."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
   <style>
-    /* ── Extra visual styles ── */
+    /* ── Local Custom Section Helpers ── */
     .section-img { width:100%; border-radius:var(--radius-lg); display:block; }
     .img-card {
       border-radius: var(--radius-lg);
@@ -22,7 +22,6 @@
     }
     .img-card svg { width:100%; height:auto; max-height:340px; }
 
-    /* Visual strip above industries */
     .industries-visual {
       display: grid;
       grid-template-columns: repeat(7,1fr);
@@ -41,11 +40,6 @@
     .ind-icon-big:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: var(--primary-light); }
     .ind-icon-big span { font-size: .78rem; font-weight:600; color:var(--text-secondary); text-align:center; }
 
-    /* Compact why cards */
-    .why-grid { grid-template-columns: repeat(3,1fr); }
-    .why-card .wc-desc { font-size:.88rem; }
-
-    /* Process visual */
     .process-visual-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -72,7 +66,6 @@
     .psl-title { font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; margin-bottom:4px; }
     .psl-desc { font-size:.82rem; color:var(--text-secondary); }
 
-    /* Modules compact */
     .modules-wrap { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-top:50px; }
     .modules-list { display:flex; flex-direction:column; gap:14px; }
     .mod-item {
@@ -85,17 +78,6 @@
     .mod-emoji { font-size:1.5rem; width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:var(--bg-alt); border-radius:10px; flex-shrink:0; }
     .mod-name { font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; }
     .mod-sub  { font-size:.8rem; color:var(--text-muted); margin-top:2px; }
-
-    /* Contact compact */
-    .contact-grid { gap:48px; }
-
-    /* Team compact */
-    .team-grid { max-width: 820px; }
-    .tc-bio { display:none; }
-    .tc-body { padding: 22px 24px; }
-
-    /* Stat banner tighter */
-    .stats-banner { padding:60px 0; }
 
     @media(max-width:900px){
       .modules-wrap,.process-visual-row { grid-template-columns:1fr; }
@@ -111,7 +93,10 @@
 <!-- ── NAV ── -->
 <nav class="navbar" id="navbar">
   <div class="nav-container">
-    <a href="#hero" class="nav-logo"><span class="logo-s">S</span>eevora</a>
+    <a href="#hero" class="nav-logo-link">
+      <img src="images/logo-transparent.png" alt="Seevora" class="nav-logo-img">
+      <span class="nav-logo-text">Seevora</span>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about"      class="nav-link">About</a></li>
       <li><a href="#modules"    class="nav-link">Modules</a></li>
@@ -120,182 +105,89 @@
       <li><a href="#team"       class="nav-link">Team</a></li>
       <li><a href="#contact"    class="nav-link">Contact</a></li>
     </ul>
-
     <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- ── HERO ── -->
 <section id="hero" class="hero-section">
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-  <div class="hero-content">
-    <div class="hero-badge"><span class="badge-dot"></span>AI Automation · Indore, India · Est. 2026</div>
-    <h1 class="hero-title">
-      Turn Your Business<br>
-      <span class="gradient-text">Processes</span> into<br>
-      Fusion With <span class="gradient-text-gold">AI</span>
-    </h1>
-    <p class="hero-subtitle" id="typewriterText"></p>
-    <div class="hero-ctas">
-      <a href="tel:+918982200895" class="btn-primary">📞 Book a Free Call</a>
-      <a href="#modules" class="btn-outline">Explore Solutions →</a>
-    </div>
-  </div>
-  <div class="hero-float-cards">
-    <div class="float-card float-card-1">
-      <div class="fc-icon">⚡</div>
-      <div><div class="fc-number">5 Days</div><div class="fc-label">Rapid Deployment</div></div>
-    </div>
-    <div class="float-card float-card-2">
-      <div class="fc-icon">📈</div>
-      <div><div class="fc-number">40%</div><div class="fc-label">Cost Reduction</div></div>
-    </div>
-    <div class="float-card float-card-3">
-      <div class="fc-icon">🤖</div>
-      <div><div class="fc-number">24/7</div><div class="fc-label">AI Autopilot</div></div>
-    </div>
-  </div>
-  <div class="hero-scroll-hint">
-    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
-    <span>Scroll to explore</span>
-  </div>
-</section>
-
-<!-- ── ABOUT ── -->
-<section id="about" class="section about-section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-left reveal-left">
-
-        <h2 class="section-title">India's Premier<br><span>AI Automation</span> Partner</h2>
-        <p class="about-description">Seevora merges AI agents with your existing software to modernize operations and accelerate sales — based in <strong>Indore, MP</strong>.</p>
-        <div class="about-features stagger-children">
-          <div class="about-feature">
-            <div class="af-icon">🎯</div>
-            <div><div class="af-title">Custom Automation</div><div class="af-desc">Built for your exact operations, not generic software</div></div>
-          </div>
-          <div class="about-feature">
-            <div class="af-icon">🇮🇳</div>
-            <div><div class="af-title">Hindi · English · Hinglish</div><div class="af-desc">AI that speaks your customers' language</div></div>
-          </div>
-          <div class="about-feature">
-            <div class="af-icon">📊</div>
-            <div><div class="af-title">ROI in 90 Days</div><div class="af-desc">40% cost reduction, tracked and guaranteed</div></div>
-          </div>
-        </div>
-        <div class="about-cta-row">
-          <a href="#contact" class="btn-primary">Get Started</a>
-          <a href="https://seevora.in" target="_blank" class="btn-outline">Visit Website →</a>
-        </div>
+    <video autoplay loop muted playsinline class="hero-video">
+      <source src="3129576-uhd_3840_2160_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,19,43,0.7) 0%, rgba(11,19,43,0.85) 100%); z-index: 1;"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Turn Your Business<br>
+        <span class="gradient-text">Processes</span> into<br>
+        Fusion With <span style="color: #ffffff;">AI</span>
+      </h1>
+      <p class="hero-subtitle" id="typewriterText"></p>
+      <div class="hero-ctas">
+        <a href="#modules" class="btn-primary">Explore Modules →</a>
       </div>
-      <div class="about-right reveal-right">
-        <!-- SVG: AI Network Visual -->
-        <div class="img-card">
-          <svg viewBox="0 0 500 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="bg" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#EEF2FF"/>
-                <stop offset="100%" stop-color="#E0E7FF"/>
-              </radialGradient>
-              <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            </defs>
-            <rect width="500" height="360" rx="20" fill="url(#bg)"/>
-            <!-- Central AI Brain -->
-            <circle cx="250" cy="180" r="50" fill="#4F46E5" opacity=".12"/>
-            <circle cx="250" cy="180" r="36" fill="#4F46E5" opacity=".2"/>
-            <circle cx="250" cy="180" r="24" fill="#4F46E5"/>
-            <text x="250" y="188" text-anchor="middle" fill="white" font-size="22">🤖</text>
-            <!-- Satellite nodes -->
-            <circle cx="100" cy="80"  r="22" fill="#818CF8"/>
-            <text x="100" y="88" text-anchor="middle" fill="white" font-size="16">📞</text>
-            <circle cx="400" cy="80"  r="22" fill="#F59E0B"/>
-            <text x="400" y="88" text-anchor="middle" fill="white" font-size="16">💬</text>
-            <circle cx="80"  cy="280" r="22" fill="#10B981"/>
-            <text x="80"  y="288" text-anchor="middle" fill="white" font-size="16">📅</text>
-            <circle cx="420" cy="280" r="22" fill="#0EA5E9"/>
-            <text x="420" y="288" text-anchor="middle" fill="white" font-size="16">🎙️</text>
-            <circle cx="180" cy="60"  r="18" fill="#C7D2FE"/>
-            <text x="180" y="68" text-anchor="middle" fill="#4F46E5" font-size="13">🔗</text>
-            <circle cx="320" cy="60"  r="18" fill="#FDE68A"/>
-            <text x="320" y="68" text-anchor="middle" fill="#92400E" font-size="13">⭐</text>
-            <!-- Connecting lines -->
-            <line x1="100" y1="100" x2="226" y2="160" stroke="#818CF8" stroke-width="1.5" stroke-dasharray="5 3" opacity=".7"/>
-            <line x1="400" y1="100" x2="274" y2="160" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5 3" opacity=".7"/>
-            <line x1="80"  y1="260" x2="226" y2="200" stroke="#10B981" stroke-width="1.5" stroke-dasharray="5 3" opacity=".7"/>
-            <line x1="420" y1="260" x2="274" y2="200" stroke="#0EA5E9" stroke-width="1.5" stroke-dasharray="5 3" opacity=".7"/>
-            <line x1="180" y1="75"  x2="235" y2="156" stroke="#C7D2FE" stroke-width="1.2" stroke-dasharray="4 3" opacity=".5"/>
-            <line x1="320" y1="75"  x2="265" y2="156" stroke="#FDE68A" stroke-width="1.2" stroke-dasharray="4 3" opacity=".5"/>
-            <!-- Orbiting dots -->
-            <circle cx="250" cy="120" r="4" fill="#4F46E5" opacity=".5"/>
-            <circle cx="296" cy="145" r="3" fill="#F59E0B" opacity=".6"/>
-            <circle cx="204" cy="215" r="3" fill="#10B981" opacity=".6"/>
-            <!-- Labels -->
-            <text x="100" y="115" text-anchor="middle" fill="#4F46E5" font-size="10" font-weight="600">AI Receptionist</text>
-            <text x="400" y="115" text-anchor="middle" fill="#D97706" font-size="10" font-weight="600">Lead Bot</text>
-            <text x="80"  y="315" text-anchor="middle" fill="#059669" font-size="10" font-weight="600">Scheduler</text>
-            <text x="420" y="315" text-anchor="middle" fill="#0369A1" font-size="10" font-weight="600">Voice AI</text>
-          </svg>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+<section id="about" class="section about-section" style="position: relative; overflow: hidden; padding: 70px 0;">
+    <div class="about-bg-icon" style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); z-index: 0; pointer-events: none;">
+      <svg width="800" height="800" viewBox="0 0 100 100" class="spin-icon">
+        <circle cx="50" cy="50" r="45" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.05" stroke-dasharray="4 4"/>
+        <circle cx="50" cy="50" r="35" stroke="var(--primary)" stroke-width="1" fill="none" opacity="0.08" stroke-dasharray="2 2"/>
+        <path d="M50 15 L50 5 M85 50 L95 50 M50 85 L50 95 M15 50 L5 50" stroke="var(--primary)" stroke-width="1" opacity="0.1"/>
+        <circle cx="50" cy="50" r="25" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.1" />
+      </svg>
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="identity-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+        <!-- Left: Our Identity & How We Work -->
+        <div class="identity-content reveal-left">
+          <h2 class="section-title" style="margin-bottom: 16px;">Our <span>Identity</span></h2>
+          <p class="about-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">We are an Indore-based AI engineering company focused on custom automation and digital workflows.</p>
+          <p class="about-description" style="margin-top: 16px; font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">We audit your existing processes to build tailored AI models that function exactly like a trained human team member.</p>
+          
+          <!-- How We Work (Inline Under Identity) -->
+          <div class="mw-block" style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border);">
+            <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 8px;">How We <span>Work</span></h3>
+            <p class="mw-subtitle" style="font-size: 1.02rem; font-weight: 600; color: var(--primary); margin-bottom: 8px;">We start with one process and make it perform.</p>
+            <p class="mw-desc" style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We identify a high-impact workflow, build a tailored AI system, and optimize it until you see concrete ROI.</p>
+          </div>
         </div>
-        <!-- Compact stat grid below the visual -->
-        <div class="about-stats-grid stagger-children" style="margin-top:20px;">
-          <div class="about-stat-card"><div class="asc-value">7+</div><div class="asc-label">Sectors Served</div></div>
-          <div class="about-stat-card accent-card"><div class="asc-value">6</div><div class="asc-label">AI Modules</div></div>
-          <div class="about-stat-card accent-card"><div class="asc-value">5</div><div class="asc-label">Day Setup</div></div>
-          <div class="about-stat-card"><div class="asc-value">24/7</div><div class="asc-label">AI Support</div></div>
+        
+        <!-- Right: Seevora at a Glance -->
+        <div class="identity-glance reveal-right" style="background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px;">
+          <h3 class="glance-title" style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 20px;">Seevora at a Glance</h3>
+          <div class="glance-grid stagger-children" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>7+ Sectors Served</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>6 Active AI Modules</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>5-Day Rapid Setup</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>24/7 Autopilot Support</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>Indore-Based Team</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>Zero Data Sale Policy</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>99.9% System Uptime</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>Full Hinglish Support</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── STATS ── -->
 <section class="stats-banner">
   <div class="container">
     <div class="stats-grid stagger-children">
       <div class="stat-item"><div class="stat-value" data-target="40" data-suffix="%">0%</div><div class="stat-label">Cost Reduction</div><div class="stat-sublabel">Within 90 days</div></div>
       <div class="stat-item"><div class="stat-value" data-target="10" data-suffix="×">0×</div><div class="stat-label">Faster Processing</div><div class="stat-sublabel">vs. manual workflows</div></div>
       <div class="stat-item"><div class="stat-value" data-target="99" data-suffix="%">0%</div><div class="stat-label">Accuracy Rate</div><div class="stat-sublabel">On structured data</div></div>
-      <div class="stat-item"><div class="stat-value" data-target="90" data-suffix=" Days">0 Days</div><div class="stat-label">ROI Timeline</div><div class="stat-sublabel">Guaranteed results</div></div>
+      <div class="stat-item">
+          <div class="stat-value" data-target="90" data-suffix="">0</div>
+          <div class="stat-label">Days ROI Timeline</div>
+          <div class="stat-sublabel">Guaranteed results</div></div>
     </div>
   </div>
 </section>
 
-<!-- ── WHY SEEVORA ── -->
-<section id="why" class="section section-alt">
-  <div class="container">
-    <div class="text-center reveal">
-
-      <h2 class="section-title">Why <span>Seevora</span></h2>
-    </div>
-    <div class="why-grid stagger-children">
-      <div class="why-card tilt-card">
-        <div class="wc-icon-wrap">🎯</div>
-        <div class="wc-number">01</div>
-        <h3 class="wc-title">100% Custom Automation</h3>
-        <p class="wc-desc">Built for your exact operations — not one-size-fits-all software.</p>
-      </div>
-      <div class="why-card tilt-card">
-        <div class="wc-icon-wrap" style="background:linear-gradient(135deg,#F59E0B,#D97706);">🔍</div>
-        <div class="wc-number">02</div>
-        <h3 class="wc-title">Deep AI Mapping</h3>
-        <p class="wc-desc">We audit your business first, then deploy AI exactly where it delivers ROI.</p>
-      </div>
-      <div class="why-card tilt-card">
-        <div class="wc-icon-wrap" style="background:linear-gradient(135deg,#10B981,#059669);">📊</div>
-        <div class="wc-number">03</div>
-        <h3 class="wc-title">Guaranteed 90-Day ROI</h3>
-        <p class="wc-desc">40% cost reduction and 2× faster leads — every metric tracked.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── MODULES ── -->
 <section id="modules" class="section">
   <div class="container">
     <div class="text-center reveal">
@@ -507,10 +399,6 @@
   </div>
 </section>
 
-
-
-
-<!-- ── BUILT FOR EVERY SECTOR (STICKY STACK CARDS) ── -->
 <section id="industries" class="section section-alt sticky-stack-section">
   <div class="container">
     <div class="text-center reveal mb-5">
@@ -656,8 +544,6 @@
   </div>
 </section>
 
-<!-- ── PROCESS ── -->
-<!-- ── PROCESS SECTION (Timeline + 360 Rotating Logo) ── -->
 <section id="process" class="section process-redesign-section">
   <div class="container">
     <div class="text-center reveal mb-5">
@@ -744,97 +630,85 @@
   </div>
 </section>
 
-<!-- ── TEAM ── -->
-<section id="team" class="section team-section">
-  <div class="container">
-    <div class="text-center reveal">
-
+<section id="team" class="section team-section" style="position: relative; overflow: hidden;">
+    <div class="team-bg-icon" style="position: absolute; top: 50%; right: -10%; transform: translateY(-50%); z-index: 0; pointer-events: none;">
+      <svg width="800" height="800" viewBox="0 0 100 100" class="spin-icon">
+        <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.05" stroke-dasharray="2 2" />
+        <polygon points="50,15 77,31 77,69 50,85 23,69 23,31" stroke="var(--primary)" stroke-width="1" fill="none" opacity="0.08" />
+        <circle cx="50" cy="50" r="15" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.1" />
+        <circle cx="50" cy="50" r="30" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.03" stroke-dasharray="4 4" />
+      </svg>
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="text-center reveal">
       <h2 class="section-title">The <span>Minds Behind</span> Seevora</h2>
     </div>
-    <div class="team-grid">
-      <div class="team-card reveal-scale">
+    <div class="team-grid" style="display: flex; justify-content: center; max-width: 380px; margin: 40px auto 0;">
+      <div class="team-card reveal-scale" style="width: 100%;">
         <div class="tc-photo-wrap">
-          <img src="images/chaitanya.png" alt="Chaitanya Panwar — CEO & Founder" class="tc-photo" loading="lazy"/>
-          <span class="tc-role-badge">CEO &amp; Founder</span>
+          <img src="images/Screenshot 2026-07-30 190806.png" alt="Chaitanya Panwar — CEO & Founder" class="tc-photo" loading="lazy"/>
         </div>
         <div class="tc-body">
           <div class="tc-name">Chaitanya Panwar</div>
           <div class="tc-role">Chief Executive Officer &amp; Founder</div>
-          <div class="tc-divider"></div>
-          <div>
-            <span class="tc-tag">🤖 AI Strategy</span>
-            <span class="tc-tag">🚀 Product</span>
-            <span class="tc-tag">💼 B2B</span>
-          </div>
-          <div class="tc-social">
-            <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="tc-social-link">💼</a>
-            <a href="https://www.instagram.com/seevora1/" target="_blank" class="tc-social-link">📸</a>
-            <a href="https://x.com/seevora1" target="_blank" class="tc-social-link">🐦</a>
-            <a href="mailto:info@seevora.in" class="tc-social-link">✉️</a>
-          </div>
-        </div>
-      </div>
-      <div class="team-card reveal-scale" style="transition-delay:.2s">
-        <div class="tc-photo-wrap">
-          <img src="images/sambandh.png" alt="Sambandh Jain — Operations Manager" class="tc-photo" loading="lazy"/>
-          <span class="tc-role-badge" style="background:rgba(245,158,11,.92)">Manager</span>
-        </div>
-        <div class="tc-body">
-          <div class="tc-name">Sambandh Jain</div>
-          <div class="tc-role">Operations Manager</div>
-          <div class="tc-divider"></div>
-          <div>
-            <span class="tc-tag">⚙️ Operations</span>
-            <span class="tc-tag">📋 Client Success</span>
-            <span class="tc-tag">🎯 Delivery</span>
-          </div>
-          <div class="tc-social">
-            <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="tc-social-link">💼</a>
-            <a href="https://www.instagram.com/seevora1/" target="_blank" class="tc-social-link">📸</a>
-            <a href="mailto:info@seevora.in" class="tc-social-link">✉️</a>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
 <section id="contact" class="section contact-section">
   <div class="container">
-    <div class="contact-grid">
-      <div class="contact-left reveal-left">
-
-        <h2 class="section-title">Let's Build<br><span>Your AI Future</span></h2>
-        <p class="section-desc">Live in 5 days. No commitment required for the first call.</p>
-        <div class="contact-cards">
-          <a href="tel:+918982200895" class="contact-card">
-            <div class="cc-icon">📞</div>
-            <div><div class="cc-label">Phone / WhatsApp</div><div class="cc-value">+91 89822 00895</div></div>
-          </a>
-          <a href="mailto:info@seevora.in" class="contact-card">
-            <div class="cc-icon">✉️</div>
-            <div><div class="cc-label">Email</div><div class="cc-value">info@seevora.in</div></div>
-          </a>
-          <div class="contact-card" style="cursor:default">
-            <div class="cc-icon">📍</div>
-            <div><div class="cc-label">Location</div><div class="cc-value">Indore, Madhya Pradesh</div></div>
-          </div>
-        </div>
-        <div class="social-row" style="margin-top:24px">
-          <a href="https://www.instagram.com/seevora1/" target="_blank" class="social-link"><span>📸</span></a>
-          <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="social-link"><span>💼</span></a>
-          <a href="https://x.com/seevora1" target="_blank" class="social-link"><span>🐦</span></a>
-          <a href="https://www.facebook.com/people/Seevora/61574331010641/" target="_blank" class="social-link"><span>👥</span></a>
-          <a href="https://www.youtube.com/@Seevora1" target="_blank" class="social-link"><span>▶️</span></a>
-        </div>
+          <div style="text-align: center; margin-bottom: 40px;" class="reveal-up">
+        <h2 class="section-title">Contact <span>Us</span></h2>
+        <p class="section-desc" style="max-width: 600px; margin: 0 auto;">Live in 5 days. No commitment required for the first call.</p>
       </div>
-      <div class="contact-right reveal-right">
-        <div class="cr-badge"><span class="badge-dot"></span>Now Accepting New Clients</div>
-        <h3 class="cr-title">Start Your AI<br>Transformation</h3>
+      <div class="contact-grid">
+        <div class="contact-left reveal-left">
+          <div class="contact-cards">
+                      <a href="tel:+918982200895" class="contact-card">
+              <div class="cc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <div class="cc-label">Phone / WhatsApp</div>
+                <div class="cc-value">+91 89822 00895</div>
+              </div>
+            </a>
+            <a href="mailto:info@seevora.in" class="contact-card">
+              <div class="cc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </div>
+              <div>
+                <div class="cc-label">Email</div>
+                <div class="cc-value">info@seevora.in</div>
+              </div>
+            </a>
+            <div class="contact-card" style="cursor:default">
+              <div class="cc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div class="cc-label">Location</div>
+                <div class="cc-value">Indore, Madhya Pradesh</div>
+              </div>
+            </div>
+        </div>
+                  <div class="social-row" style="margin-top:24px">
+            <a href="https://www.instagram.com/seevora1/" target="_blank" class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></span></a>
+            <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></span></a>
+            <a href="https://x.com/seevora1" target="_blank" class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></span></a>
+            <a href="https://www.facebook.com/people/Seevora/61574331010641/" target="_blank"
+              class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span></a>
+            <a href="https://www.youtube.com/@Seevora1" target="_blank" class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></span></a>
+          </div>
+      </div>
+              <div class="contact-right reveal-right">
+          <h3 class="cr-title">Start Your AI<br>Transformation</h3>
         <p class="cr-desc">Book a free 30-min call with Chaitanya. No jargon, just real solutions.</p>
-        <a href="https://wa.me/918982200895?text=Hi%20Seevora!%20I%27m%20interested%20in%20AI%20automation." target="_blank" class="cr-whatsapp">💬 Chat on WhatsApp</a>
-        <a href="tel:+918982200895" class="cr-call">📞 +91 89822 00895</a>
+                  <a href="https://wa.me/918982200895?text=Hi%20Seevora!%20I%27m%20interested%20in%20AI%20automation."
+            target="_blank" class="cr-whatsapp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg> Chat on WhatsApp</a>
+          <a href="tel:+918982200895" class="cr-call"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +91 89822 00895</a>
         <div class="cr-info">Seevora Private Limited · CIN: U62011MP2026PTC082651<br>Indore, Madhya Pradesh · info@seevora.in</div>
       </div>
     </div>
@@ -842,81 +716,107 @@
 </section>
 
 <!-- ── FOOTER ── -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="footer-logo"><span class="logo-s">S</span>eevora</span>
-        <p>Custom AI SaaS, intelligent automations, and AI products designed around the way your business actually works.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/seevora1/" target="_blank" class="footer-social-link">📸</a>
-          <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="footer-social-link">💼</a>
-          <a href="https://x.com/seevora1" target="_blank" class="footer-social-link">🐦</a>
-          <a href="https://www.facebook.com/people/Seevora/61574331010641/" target="_blank" class="footer-social-link">👥</a>
-          <a href="https://www.youtube.com/@Seevora1" target="_blank" class="footer-social-link">▶️</a>
+  <footer class="footer">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 500px; margin: 0 auto 24px auto;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px;">
+          <img src="images/logo-transparent.png" alt="Seevora Logo" style="height: 48px; filter: brightness(0) invert(1);">
+          <h2 style="color: white; font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 800; margin: 0;">Seevora</h2>
         </div>
+        <p style="color: rgba(255, 255, 255, 0.45); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+          Custom AI SaaS, intelligent automations, and AI products designed around the way your business actually works.
+        </p>
       </div>
-      <div class="footer-col"><h4>Modules</h4><ul class="footer-links"><li><a href="#modules">AI Receptionist</a></li><li><a href="#modules">Lead Intake Bot</a></li><li><a href="#modules">Auto Scheduler</a></li><li><a href="#modules">Voice Assistants</a></li><li><a href="#modules">CRM Syncing</a></li><li><a href="#modules">Reputation Builder</a></li></ul></div>
-      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="#industries">Healthcare</a></li><li><a href="#industries">Education</a></li><li><a href="#industries">Personal Care</a></li><li><a href="#industries">Diagnostics</a></li><li><a href="#industries">Fitness & Gyms</a></li><li><a href="#industries">Real Estate</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="#about">About</a></li><li><a href="#why">Why Seevora</a></li><li><a href="#team">Team</a></li><li><a href="#contact">Contact</a></li><li><a href="https://seevora.in" target="_blank">Website</a></li></ul></div>
+      <div class="footer-bottom" style="display: flex; flex-direction: column; align-items: center; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; gap: 8px;">
+        <p style="color: rgba(255,255,255,0.3); font-size: 0.85rem; margin: 0;">© 2026 Seevora Private Limited. All rights reserved. Indore, India.</p>
+        <p class="footer-cin" style="margin: 0;">CIN: U62011MP2026PTC082651</p>
+      </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Seevora Private Limited. All rights reserved. Indore, India.</p>
-      <p class="footer-cin">CIN: U62011MP2026PTC082651</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <script>
 /* 1. NAVBAR */
-const navbar=document.getElementById('navbar');
-const navToggle=document.getElementById('navToggle');
-window.addEventListener('scroll',()=>{
-  navbar.classList.toggle('scrolled',window.scrollY>30);
-  const secs=document.querySelectorAll('section[id]');let cur='';
-  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
-  document.querySelectorAll('.nav-link').forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active');});
+const navbar = document.getElementById('navbar');
+const navToggle = document.getElementById('navToggle');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 30) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
 });
-navToggle.addEventListener('click',()=>navbar.classList.toggle('menu-open'));
+navToggle.addEventListener('click', () => navbar.classList.toggle('menu-open'));
 
-/* 2. CANVAS */
-const canvas=document.getElementById('heroCanvas');
-const ctx=canvas.getContext('2d');
-let mouse={x:-1e4,y:-1e4};
-function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
-resize();window.addEventListener('resize',resize);
-const hero=document.getElementById('hero');
-hero.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
-hero.addEventListener('mouseleave',()=>{mouse.x=-1e4;mouse.y=-1e4;});
-class P{constructor(){this.reset();}reset(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.vx=(Math.random()-.5)*.6;this.vy=(Math.random()-.5)*.6;this.r=Math.random()*2+1;this.a=Math.random()*.35+.1;this.c=Math.random()>.7?'#F59E0B':'#4F46E5';}update(){const dx=this.x-mouse.x,dy=this.y-mouse.y,d=Math.hypot(dx,dy);if(d<100){this.x+=dx/d*2.5;this.y+=dy/d*2.5;}this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>canvas.width)this.vx*=-1;if(this.y<0||this.y>canvas.height)this.vy*=-1;}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.c;ctx.globalAlpha=this.a;ctx.fill();ctx.globalAlpha=1;}}
-const pts=Array.from({length:85},()=>new P());
-function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);pts.forEach(p=>{p.update();p.draw();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.hypot(dx,dy);if(d<130){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(79,70,229,${(1-d/130)*.18})`;ctx.lineWidth=.8;ctx.stroke();}}requestAnimationFrame(draw);}
-draw();
+/* 2. TYPEWRITER */
+const tw = document.getElementById('typewriterText');
+if (tw) {
+  const txt = "Deploy custom AI automation in 5 days. 24/7 AI receptionist, WhatsApp bots & booking systems — built for India.";
+  let ci = 0;
+  const cur = document.createElement('span');
+  cur.className = 'typewriter-cursor';
+  tw.appendChild(cur);
+  function type() {
+    if (ci < txt.length) {
+      tw.insertBefore(document.createTextNode(txt[ci]), cur);
+      ci++;
+      setTimeout(type, ci === 1 ? 900 : 30);
+    }
+  }
+  setTimeout(type, 1000);
+}
 
-/* 3. TYPEWRITER */
-const tw=document.getElementById('typewriterText');
-const txt="Deploy custom AI automation in 5 days. 24/7 AI receptionist, WhatsApp bots & booking systems — built for India.";
-let ci=0;const cur=document.createElement('span');cur.className='typewriter-cursor';tw.appendChild(cur);
-function type(){if(ci<txt.length){tw.insertBefore(document.createTextNode(txt[ci]),cur);ci++;setTimeout(type,ci===1?900:30);}}
-setTimeout(type,1200);
+/* 3. INTERSECTION OBSERVER */
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(x => {
+    if (x.isIntersecting) {
+      x.target.classList.add('visible');
+      ro.unobserve(x.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-/* 4. REVEAL */
-const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');ro.unobserve(x.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.stagger-children,.cascade-children').forEach(el=>ro.observe(el));
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .cascade-children').forEach(el => ro.observe(el));
 
-/* 5. COUNTER */
-function animCount(el){const t=parseInt(el.dataset.target),suf=el.dataset.suffix||'',dur=1800,s=performance.now();(function step(now){const p=Math.min((now-s)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(e*t)+suf;if(p<1)requestAnimationFrame(step);})(s);}
-new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.querySelectorAll('[data-target]').forEach(animCount);});},{threshold:.3}).observe(document.querySelector('.stats-banner'));
+/* 4. STATS COUNTER ANIMATION */
+function animCount(el) {
+  const target = parseFloat(el.getAttribute('data-target'));
+  const isPercent = el.innerText.includes('%');
+  const suffix = isPercent ? '%' : '+';
+  let start = 0;
+  const dur = 1800;
+  const step = 16;
+  const inc = target / (dur / step);
+  const timer = setInterval(() => {
+    start += inc;
+    if (start >= target) {
+      el.innerText = target + suffix;
+      clearInterval(timer);
+    } else {
+      el.innerText = Math.floor(start) + suffix;
+    }
+  }, step);
+}
 
-/* 6. 3D TILT */
-document.querySelectorAll('.tilt-card').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),dx=(e.clientX-r.left-r.width/2)/(r.width/2),dy=(e.clientY-r.top-r.height/2)/(r.height/2);c.style.transform=`perspective(800px) rotateY(${dx*10}deg) rotateX(${-dy*10}deg) translateZ(10px)`;});c.addEventListener('mouseleave',()=>{c.style.transform='perspective(800px) rotateY(0) rotateX(0) translateZ(0)';});});
+const statsBanner = document.querySelector('.stats-banner');
+if (statsBanner) {
+  new IntersectionObserver((entries) => {
+    entries.forEach(x => {
+      if (x.isIntersecting) {
+        x.target.querySelectorAll('[data-target]').forEach(animCount);
+      }
+    });
+  }, { threshold: 0.3 }).observe(statsBanner);
+}
 
-/* 7. SMOOTH SCROLL */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});navbar.classList.remove('menu-open');}});});
-
-/* 8. RIPPLE */
-document.querySelectorAll('.btn-primary,.cr-whatsapp').forEach(btn=>{btn.addEventListener('click',function(e){const rp=document.createElement('span'),r=this.getBoundingClientRect(),sz=Math.max(r.width,r.height)*1.5;rp.style.cssText=`position:absolute;width:${sz}px;height:${sz}px;left:${e.clientX-r.left-sz/2}px;top:${e.clientY-r.top-sz/2}px;background:rgba(255,255,255,.28);border-radius:50%;transform:scale(0);animation:rpl .6s linear;pointer-events:none;`;this.style.overflow='hidden';this.style.position='relative';this.appendChild(rp);setTimeout(()=>rp.remove(),700);});});
-const rs=document.createElement('style');rs.textContent='@keyframes rpl{to{transform:scale(1);opacity:0;}}';document.head.appendChild(rs);
+/* 5. ACTIVE NAV HIGHLIGHT */
+const secs = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) cur = s.id;
+  });
+  document.querySelectorAll('.nav-link').forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
+  });
+});
 </script>
 </body>
 </html>
