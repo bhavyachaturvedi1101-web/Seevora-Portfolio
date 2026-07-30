@@ -111,7 +111,10 @@
 <!-- ── NAV ── -->
 <nav class="navbar" id="navbar">
   <div class="nav-container">
-    <a href="#hero" class="nav-logo"><span class="logo-s">S</span>eevora</a>
+    <a href="#hero" class="nav-logo-link">
+      <img src="images/logo-transparent.png" alt="Seevora" class="nav-logo-img">
+      <span class="nav-logo-text">Seevora</span>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about"      class="nav-link">About</a></li>
       <li><a href="#modules"    class="nav-link">Modules</a></li>
@@ -120,138 +123,76 @@
       <li><a href="#team"       class="nav-link">Team</a></li>
       <li><a href="#contact"    class="nav-link">Contact</a></li>
     </ul>
-    <a href="tel:+918982200895" class="nav-cta">📞 Book a Call</a>
     <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- ── HERO ── -->
-<section id="hero" class="hero-section">
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-  <div class="hero-content">
-    <div class="hero-badge"><span class="badge-dot"></span>AI Automation · Indore, India · Est. 2026</div>
-    <h1 class="hero-title">
-      Turn Your Business<br>
-      <span class="gradient-text">Processes</span> into<br>
-      Fusion With <span class="gradient-text-gold">AI</span>
-    </h1>
-    <p class="hero-subtitle" id="typewriterText"></p>
-    <div class="hero-ctas">
-      <a href="tel:+918982200895" class="btn-primary">📞 Book a Free Call</a>
-      <a href="#modules" class="btn-outline">Explore Solutions →</a>
+  <!-- ── HERO ── -->
+  <section id="hero" class="hero-section">
+    <video autoplay loop muted playsinline class="hero-video">
+      <source src="3129576-uhd_3840_2160_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,19,43,0.7) 0%, rgba(11,19,43,0.85) 100%); z-index: 1;"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Turn Your Business<br>
+        <span class="gradient-text">Processes</span> into<br>
+        Fusion With <span style="color: #ffffff;">AI</span>
+      </h1>
+      <p class="hero-subtitle" id="typewriterText"></p>
+      <div class="hero-ctas">
+        <a href="#modules" class="btn-primary">Explore Modules →</a>
+      </div>
     </div>
-  </div>
-  <div class="hero-float-cards">
-    <div class="float-card float-card-1">
-      <div class="fc-icon">⚡</div>
-      <div><div class="fc-number">5 Days</div><div class="fc-label">Rapid Deployment</div></div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+      <span>Scroll to explore</span>
     </div>
-    <div class="float-card float-card-2">
-      <div class="fc-icon">📈</div>
-      <div><div class="fc-number">40%</div><div class="fc-label">Cost Reduction</div></div>
-    </div>
-    <div class="float-card float-card-3">
-      <div class="fc-icon">🤖</div>
-      <div><div class="fc-number">24/7</div><div class="fc-label">AI Autopilot</div></div>
-    </div>
-  </div>
-  <div class="hero-scroll-hint">
-    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
-    <span>Scroll to explore</span>
-  </div>
-</section>
+  </section>
 
-<!-- ── ABOUT ── -->
-<section id="about" class="section about-section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-left reveal-left">
-        <div class="section-label">Who We Are</div>
-        <h2 class="section-title">India's Premier<br><span>AI Automation</span> Partner</h2>
-        <p class="about-description">Seevora merges AI agents with your existing software to modernize operations and accelerate sales — based in <strong>Indore, MP</strong>.</p>
-        <div class="about-features stagger-children">
-          <div class="about-feature">
-            <div class="af-icon">🎯</div>
-            <div><div class="af-title">Custom Automation</div><div class="af-desc">Built for your exact operations, not generic software</div></div>
-          </div>
-          <div class="about-feature">
-            <div class="af-icon">🇮🇳</div>
-            <div><div class="af-title">Hindi · English · Hinglish</div><div class="af-desc">AI that speaks your customers' language</div></div>
-          </div>
-          <div class="about-feature">
-            <div class="af-icon">📊</div>
-            <div><div class="af-title">ROI in 90 Days</div><div class="af-desc">40% cost reduction, tracked and guaranteed</div></div>
+  <!-- ── ABOUT ── -->
+  <section id="about" class="section about-section" style="position: relative; overflow: hidden; padding: 70px 0;">
+    <div class="about-bg-icon" style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); z-index: 0; pointer-events: none;">
+      <svg width="800" height="800" viewBox="0 0 100 100" class="spin-icon">
+        <circle cx="50" cy="50" r="45" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.05" stroke-dasharray="4 4"/>
+        <circle cx="50" cy="50" r="35" stroke="var(--primary)" stroke-width="1" fill="none" opacity="0.08" stroke-dasharray="2 2"/>
+        <path d="M50 15 L50 5 M85 50 L95 50 M50 85 L50 95 M15 50 L5 50" stroke="var(--primary)" stroke-width="1" opacity="0.1"/>
+        <circle cx="50" cy="50" r="25" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.1" />
+      </svg>
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="identity-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+        <!-- Left: Our Identity & How We Work -->
+        <div class="identity-content reveal-left">
+          <h2 class="section-title" style="margin-bottom: 16px;">Our <span>Identity</span></h2>
+          <p class="about-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">We are an Indore-based AI engineering company focused on custom automation and digital workflows.</p>
+          <p class="about-description" style="margin-top: 16px; font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">We audit your existing processes to build tailored AI models that function exactly like a trained human team member.</p>
+          
+          <!-- How We Work (Inline Under Identity) -->
+          <div class="mw-block" style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border);">
+            <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 8px;">How We <span>Work</span></h3>
+            <p class="mw-subtitle" style="font-size: 1.02rem; font-weight: 600; color: var(--primary); margin-bottom: 8px;">We start with one process and make it perform.</p>
+            <p class="mw-desc" style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We identify a high-impact workflow, build a tailored AI system, and optimize it until you see concrete ROI.</p>
           </div>
         </div>
-        <div class="about-cta-row">
-          <a href="#contact" class="btn-primary">Get Started</a>
-          <a href="https://seevora.in" target="_blank" class="btn-outline">Visit Website →</a>
-        </div>
-      </div>
-      <div class="about-right reveal-right">
-        <!-- SVG: AI Network Visual -->
-        <div class="img-card">
-          <svg viewBox="0 0 500 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="bg" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#EEF2FF"/>
-                <stop offset="100%" stop-color="#E0E7FF"/>
-              </radialGradient>
-              <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            </defs>
-            <rect width="500" height="360" rx="20" fill="url(#bg)"/>
-            <!-- Central AI Brain -->
-            <circle cx="250" cy="180" r="50" fill="#4F46E5" opacity=".12"/>
-            <circle cx="250" cy="180" r="36" fill="#4F46E5" opacity=".2"/>
-            <circle cx="250" cy="180" r="24" fill="#4F46E5"/>
-            <text x="250" y="188" text-anchor="middle" fill="white" font-size="22">🤖</text>
-            <!-- Satellite nodes -->
-            <circle cx="100" cy="80"  r="22" fill="#818CF8"/>
-            <text x="100" y="88" text-anchor="middle" fill="white" font-size="16">📞</text>
-            <circle cx="400" cy="80"  r="22" fill="#F59E0B"/>
-            <text x="400" y="88" text-anchor="middle" fill="white" font-size="16">💬</text>
-            <circle cx="80"  cy="280" r="22" fill="#10B981"/>
-            <text x="80"  y="288" text-anchor="middle" fill="white" font-size="16">📅</text>
-            <circle cx="420" cy="280" r="22" fill="#0EA5E9"/>
-            <text x="420" y="288" text-anchor="middle" fill="white" font-size="16">🎙️</text>
-            <circle cx="180" cy="60"  r="18" fill="#C7D2FE"/>
-            <text x="180" y="68" text-anchor="middle" fill="#4F46E5" font-size="13">🔗</text>
-            <circle cx="320" cy="60"  r="18" fill="#FDE68A"/>
-            <text x="320" y="68" text-anchor="middle" fill="#92400E" font-size="13">⭐</text>
-            <!-- Connecting lines -->
-            <line x1="100" y1="100" x2="226" y2="160" stroke="#818CF8" stroke-width="1.5" stroke-dasharray="5 3" opacity=".7"/>
-            <line x1="400" y1="100" x2="274" y2="160" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5 3" opacity=".7"/>
-            <line x1="80"  y1="260" x2="226" y2="200" stroke="#10B981" stroke-width="1.5" stroke-dasharray="5 3" opacity=".7"/>
-            <line x1="420" y1="260" x2="274" y2="200" stroke="#0EA5E9" stroke-width="1.5" stroke-dasharray="5 3" opacity=".7"/>
-            <line x1="180" y1="75"  x2="235" y2="156" stroke="#C7D2FE" stroke-width="1.2" stroke-dasharray="4 3" opacity=".5"/>
-            <line x1="320" y1="75"  x2="265" y2="156" stroke="#FDE68A" stroke-width="1.2" stroke-dasharray="4 3" opacity=".5"/>
-            <!-- Orbiting dots -->
-            <circle cx="250" cy="120" r="4" fill="#4F46E5" opacity=".5"/>
-            <circle cx="296" cy="145" r="3" fill="#F59E0B" opacity=".6"/>
-            <circle cx="204" cy="215" r="3" fill="#10B981" opacity=".6"/>
-            <!-- Labels -->
-            <text x="100" y="115" text-anchor="middle" fill="#4F46E5" font-size="10" font-weight="600">AI Receptionist</text>
-            <text x="400" y="115" text-anchor="middle" fill="#D97706" font-size="10" font-weight="600">Lead Bot</text>
-            <text x="80"  y="315" text-anchor="middle" fill="#059669" font-size="10" font-weight="600">Scheduler</text>
-            <text x="420" y="315" text-anchor="middle" fill="#0369A1" font-size="10" font-weight="600">Voice AI</text>
-          </svg>
-        </div>
-        <!-- Compact stat grid below the visual -->
-        <div class="about-stats-grid stagger-children" style="margin-top:20px;">
-          <div class="about-stat-card"><div class="asc-value">7+</div><div class="asc-label">Sectors Served</div></div>
-          <div class="about-stat-card accent-card"><div class="asc-value">6</div><div class="asc-label">AI Modules</div></div>
-          <div class="about-stat-card accent-card"><div class="asc-value">5</div><div class="asc-label">Day Setup</div></div>
-          <div class="about-stat-card"><div class="asc-value">24/7</div><div class="asc-label">AI Support</div></div>
+        
+        <!-- Right: Seevora at a Glance -->
+        <div class="identity-glance reveal-right" style="background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px;">
+          <h3 class="glance-title" style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 20px;">Seevora at a Glance</h3>
+          <div class="glance-grid stagger-children" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>7+ Sectors Served</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>6 Active AI Modules</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>5-Day Rapid Setup</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>24/7 Autopilot Support</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>Indore-Based Team</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>Zero Data Sale Policy</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>99.9% System Uptime</div>
+            <div class="glance-card" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: var(--text);"><span style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></span>Full Hinglish Support</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- ── STATS ── -->
 <section class="stats-banner">
@@ -260,37 +201,10 @@
       <div class="stat-item"><div class="stat-value" data-target="40" data-suffix="%">0%</div><div class="stat-label">Cost Reduction</div><div class="stat-sublabel">Within 90 days</div></div>
       <div class="stat-item"><div class="stat-value" data-target="10" data-suffix="×">0×</div><div class="stat-label">Faster Processing</div><div class="stat-sublabel">vs. manual workflows</div></div>
       <div class="stat-item"><div class="stat-value" data-target="99" data-suffix="%">0%</div><div class="stat-label">Accuracy Rate</div><div class="stat-sublabel">On structured data</div></div>
-      <div class="stat-item"><div class="stat-value" data-target="90" data-suffix=" Days">0 Days</div><div class="stat-label">ROI Timeline</div><div class="stat-sublabel">Guaranteed results</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── WHY SEEVORA ── -->
-<section id="why" class="section section-alt">
-  <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Why Choose Us</div>
-      <h2 class="section-title">Why <span>Seevora</span></h2>
-    </div>
-    <div class="why-grid stagger-children">
-      <div class="why-card tilt-card">
-        <div class="wc-icon-wrap">🎯</div>
-        <div class="wc-number">01</div>
-        <h3 class="wc-title">100% Custom Automation</h3>
-        <p class="wc-desc">Built for your exact operations — not one-size-fits-all software.</p>
-      </div>
-      <div class="why-card tilt-card">
-        <div class="wc-icon-wrap" style="background:linear-gradient(135deg,#F59E0B,#D97706);">🔍</div>
-        <div class="wc-number">02</div>
-        <h3 class="wc-title">Deep AI Mapping</h3>
-        <p class="wc-desc">We audit your business first, then deploy AI exactly where it delivers ROI.</p>
-      </div>
-      <div class="why-card tilt-card">
-        <div class="wc-icon-wrap" style="background:linear-gradient(135deg,#10B981,#059669);">📊</div>
-        <div class="wc-number">03</div>
-        <h3 class="wc-title">Guaranteed 90-Day ROI</h3>
-        <p class="wc-desc">40% cost reduction and 2× faster leads — every metric tracked.</p>
-      </div>
+      <div class="stat-item">
+          <div class="stat-value" data-target="90" data-suffix="">0</div>
+          <div class="stat-label">Days ROI Timeline</div>
+          <div class="stat-sublabel">Guaranteed results</div></div>
     </div>
   </div>
 </section>
@@ -299,217 +213,469 @@
 <section id="modules" class="section">
   <div class="container">
     <div class="text-center reveal">
-      <div class="section-label">Our Solutions</div>
       <h2 class="section-title">6 Powerful <span>AI Modules</span></h2>
+      <p class="section-desc">Six intelligent automation modules for every touchpoint of your business. Hover each card to see how it works.</p>
     </div>
-    <div class="modules-wrap">
-      <!-- Left: Module list -->
-      <div class="modules-list stagger-children">
-        <div class="mod-item"><div class="mod-emoji">📞</div><div><div class="mod-name">AI Receptionist</div><div class="mod-sub">24/7 calls in Hindi, English & Hinglish</div></div></div>
-        <div class="mod-item"><div class="mod-emoji">💬</div><div><div class="mod-name">Lead Intake Bot</div><div class="mod-sub">WhatsApp & web lead capture & qualification</div></div></div>
-        <div class="mod-item"><div class="mod-emoji">📅</div><div><div class="mod-name">Auto Scheduler</div><div class="mod-sub">Smart appointment booking & reminders</div></div></div>
-        <div class="mod-item"><div class="mod-emoji">🎙️</div><div><div class="mod-name">Voice Assistants</div><div class="mod-sub">Custom multilingual voice AI agents</div></div></div>
-        <div class="mod-item"><div class="mod-emoji">🔗</div><div><div class="mod-name">CRM Syncing</div><div class="mod-sub">Real-time data sync across all tools</div></div></div>
-        <div class="mod-item"><div class="mod-emoji">⭐</div><div><div class="mod-name">Reputation Builder</div><div class="mod-sub">Automated Google review collection</div></div></div>
-      </div>
-      <!-- Right: WhatsApp/Chat interface SVG -->
-      <div class="reveal-right">
-        <div class="img-card" style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7); padding:30px;">
-          <svg viewBox="0 0 360 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Phone frame -->
-            <rect x="30" y="10" width="300" height="460" rx="28" fill="#1E1B4B"/>
-            <rect x="38" y="28" width="284" height="424" rx="20" fill="#ECE5DD"/>
-            <!-- WhatsApp header -->
-            <rect x="38" y="28" width="284" height="60" rx="20" fill="#075E54"/>
-            <rect x="38" y="68" width="284" height="20" fill="#075E54"/>
-            <circle cx="72" cy="58" r="20" fill="#25D366"/>
-            <text x="72" y="66" text-anchor="middle" fill="white" font-size="18">🤖</text>
-            <text x="105" y="52" fill="white" font-size="13" font-weight="700">Seevora AI</text>
-            <text x="105" y="68" fill="#B2DFDB" font-size="10">online • responds instantly</text>
-            <!-- Chat bubbles -->
-            <rect x="50" y="100" width="190" height="44" rx="12" fill="#fff"/>
-            <text x="66" y="118" fill="#1E293B" font-size="11">Hello! How can I help you</text>
-            <text x="66" y="134" fill="#1E293B" font-size="11">today? 😊</text>
-            <rect x="140" y="160" width="148" height="36" rx="12" fill="#DCF8C6"/>
-            <text x="156" y="183" fill="#1E293B" font-size="11">I need an appointment</text>
-            <rect x="50" y="212" width="210" height="52" rx="12" fill="#fff"/>
-            <text x="66" y="230" fill="#1E293B" font-size="11">Sure! I'll book that for</text>
-            <text x="66" y="246" fill="#1E293B" font-size="11">you. What date works? 📅</text>
-            <rect x="170" y="280" width="118" height="36" rx="12" fill="#DCF8C6"/>
-            <text x="186" y="303" fill="#1E293B" font-size="11">Tomorrow 10am</text>
-            <rect x="50" y="332" width="230" height="52" rx="12" fill="#fff"/>
-            <text x="66" y="350" fill="#1E293B" font-size="11">✅ Booked! Confirmation</text>
-            <text x="66" y="366" fill="#1E293B" font-size="11">sent to your WhatsApp.</text>
-            <!-- Input bar -->
-            <rect x="38" y="420" width="284" height="32" fill="#F0F0F0"/>
-            <rect x="38" y="432" width="284" height="20" fill="#F0F0F0"/>
-            <rect x="48" y="424" width="200" height="28" rx="14" fill="white"/>
-            <text x="68" y="442" fill="#999" font-size="11">Type a message...</text>
-            <circle cx="300" cy="438" r="14" fill="#25D366"/>
-            <text x="300" y="445" text-anchor="middle" fill="white" font-size="14">➤</text>
-          </svg>
+    <div class="modules-grid cascade-children">
+
+      <!-- Card 1: AI Receptionist -->
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-front">
+          <div class="card-bg-img"><img src="./images/ai_receptionist.jpg" alt="AI Receptionist background" style="object-fit: cover; object-position: right top;"></div>
+          <div class="fm-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="fm-title">AI Receptionist</div>
+          <div class="fm-subtitle">24/7 Virtual Front Desk</div>
+          <div class="fm-flip-hint">↻ Hover to learn more</div>
         </div>
-      </div>
+        <div class="flip-back">
+          <div class="card-bg-img"><!-- Front: headset + sound waves -->
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="88" r="60" fill="#4F46E5" opacity="0.12"/>
+              <path d="M52 96 Q52 44 100 44 Q148 44 148 96" stroke="#4F46E5" stroke-width="8" fill="none" stroke-linecap="round"/>
+              <rect x="38" y="93" width="20" height="34" rx="10" fill="#4F46E5"/>
+              <rect x="142" y="93" width="20" height="34" rx="10" fill="#4F46E5"/>
+              <path d="M158 98 Q170 110 158 122" stroke="#F59E0B" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path d="M166 89 Q183 110 166 131" stroke="#F59E0B" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <line x1="100" y1="127" x2="100" y2="155" stroke="#4F46E5" stroke-width="4" stroke-linecap="round"/>
+              <line x1="78" y1="155" x2="122" y2="155" stroke="#4F46E5" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="78" cy="72" r="4" fill="#818CF8"/><circle cx="100" cy="64" r="4" fill="#818CF8"/><circle cx="122" cy="72" r="4" fill="#818CF8"/>
+            </svg>
+          </div>
+          <div class="fb-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="fb-title">AI Receptionist</div>
+          <div class="fb-desc">A 24/7 virtual receptionist that handles calls, answers queries, and books appointments in English, Hindi &amp; Hinglish — never misses a customer.</div>
+          <div class="fb-cta">✦ Book a Demo →</div>
+        </div>
+      </div></div>
+
+      <!-- Card 2: Lead Intake Bot -->
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-front">
+          <div class="card-bg-img"><img src="./images/lead_intake.jpg" alt="Lead Intake Bot background"></div>
+          <div class="fm-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+          <div class="fm-title">Lead Intake Bot</div>
+          <div class="fm-subtitle">WhatsApp &amp; Web Lead Capture</div>
+          <div class="fm-flip-hint">↻ Hover to learn more</div>
+        </div>
+        <div class="flip-back">
+          <div class="card-bg-img"><!-- Front: chat bubbles flowing into funnel -->
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="90" height="42" rx="12" fill="#25D366" opacity="0.35"/>
+              <rect x="28" y="32" width="60" height="7" rx="3.5" fill="#25D366"/>
+              <rect x="28" y="43" width="44" height="7" rx="3.5" fill="#25D366"/>
+              <polygon points="30,62 48,62 39,76" fill="#25D366" opacity="0.35"/>
+              <rect x="90" y="55" width="90" height="38" rx="12" fill="#4F46E5" opacity="0.2"/>
+              <rect x="98" y="66" width="68" height="7" rx="3.5" fill="#4F46E5" opacity="0.4"/>
+              <rect x="98" y="77" width="50" height="7" rx="3.5" fill="#4F46E5" opacity="0.3"/>
+              <polygon points="162,93 180,93 171,107" fill="#4F46E5" opacity="0.2"/>
+              <path d="M60 115 L140 115 L125 148 L75 148 Z" fill="#4F46E5" opacity="0.3"/>
+              <path d="M80 148 L88 148 L88 175 L112 175 L112 148 L120 148" fill="#4F46E5" opacity="0.3"/>
+              <circle cx="100" cy="185" r="8" fill="#F59E0B" opacity="0.5"/>
+              <path d="M97 185 L100 188 L106 180" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="fb-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+          <div class="fb-title">Lead Intake Bot</div>
+          <div class="fb-desc">Automatically captures, qualifies, and routes leads from WhatsApp, your website, and social channels — ensuring no prospect slips through.</div>
+          <div class="fb-cta">✦ Book a Demo →</div>
+        </div>
+      </div></div>
+
+      <!-- Card 3: Auto Scheduler -->
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-front">
+          <div class="card-bg-img"><img src="./images/auto_scheduler.jpg" alt="Auto Scheduler background"></div>
+          <div class="fm-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg></div>
+          <div class="fm-title">Auto Scheduler</div>
+          <div class="fm-subtitle">Smart Appointment Booking</div>
+          <div class="fm-flip-hint">↻ Hover to learn more</div>
+        </div>
+        <div class="flip-back">
+          <div class="card-bg-img"><!-- Front: calendar with booked slot -->
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="18" y="40" width="164" height="148" rx="14" fill="#4F46E5" opacity="0.1"/>
+              <rect x="18" y="40" width="164" height="42" rx="14" fill="#4F46E5" opacity="0.25"/>
+              <rect x="18" y="68" width="164" height="14" fill="#4F46E5" opacity="0.25"/>
+              <circle cx="62" cy="32" r="7" fill="#4F46E5"/><line x1="62" y1="24" x2="62" y2="40" stroke="#4F46E5" stroke-width="3.5"/>
+              <circle cx="138" cy="32" r="7" fill="#4F46E5"/><line x1="138" y1="24" x2="138" y2="40" stroke="#4F46E5" stroke-width="3.5"/>
+              <text x="100" y="63" text-anchor="middle" fill="white" font-size="12" font-weight="700" font-family="Outfit,sans-serif">JULY 2026</text>
+              <circle cx="42" cy="105" r="10" fill="#818CF8" opacity="0.4"/>
+              <circle cx="72" cy="105" r="10" fill="#818CF8" opacity="0.4"/>
+              <circle cx="100" cy="105" r="12" fill="#4F46E5" opacity="0.9"/>
+              <path d="M95 105 L99 109 L107 99" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="128" cy="105" r="10" fill="#818CF8" opacity="0.4"/>
+              <circle cx="158" cy="105" r="10" fill="#818CF8" opacity="0.4"/>
+              <circle cx="42" cy="138" r="10" fill="#818CF8" opacity="0.25"/>
+              <circle cx="72" cy="138" r="10" fill="#818CF8" opacity="0.25"/>
+              <circle cx="100" cy="138" r="10" fill="#818CF8" opacity="0.25"/>
+              <circle cx="128" cy="138" r="10" fill="#F59E0B" opacity="0.5"/>
+              <circle cx="158" cy="138" r="10" fill="#818CF8" opacity="0.25"/>
+              <circle cx="42" cy="170" r="10" fill="#818CF8" opacity="0.15"/>
+              <circle cx="72" cy="170" r="10" fill="#818CF8" opacity="0.15"/>
+            </svg>
+          </div>
+          <div class="fb-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg></div>
+          <div class="fb-title">Auto Scheduler</div>
+          <div class="fb-desc">Automated appointment booking and calendar management that integrates with your existing tools — eliminating manual scheduling and no-shows.</div>
+          <div class="fb-cta">✦ Book a Demo →</div>
+        </div>
+      </div></div>
+
+      <!-- Card 4: Voice Assistants -->
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-front">
+          <div class="card-bg-img"><img src="./images/voice_assistant.jpg" alt="Voice Assistants background"></div>
+          <div class="fm-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg></div>
+          <div class="fm-title">Voice Assistants</div>
+          <div class="fm-subtitle">Multilingual Voice AI</div>
+          <div class="fm-flip-hint">↻ Hover to learn more</div>
+        </div>
+        <div class="flip-back">
+          <div class="card-bg-img"><!-- Front: microphone + audio waves -->
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="78" y="22" width="44" height="78" rx="22" fill="#4F46E5" opacity="0.38"/>
+              <line x1="88" y1="48" x2="88" y2="72" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+              <line x1="100" y1="36" x2="100" y2="84" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+              <line x1="112" y1="48" x2="112" y2="72" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+              <path d="M48 94 Q48 140 100 140 Q152 140 152 94" stroke="#4F46E5" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+              <line x1="100" y1="140" x2="100" y2="168" stroke="#4F46E5" stroke-width="5.5" stroke-linecap="round"/>
+              <line x1="72" y1="168" x2="128" y2="168" stroke="#4F46E5" stroke-width="5.5" stroke-linecap="round"/>
+              <path d="M24 82 Q34 100 24 118" stroke="#F59E0B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <path d="M14 70 Q30 100 14 130" stroke="#F59E0B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M176 82 Q166 100 176 118" stroke="#F59E0B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <path d="M186 70 Q170 100 186 130" stroke="#F59E0B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="fb-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg></div>
+          <div class="fb-title">Voice Assistants</div>
+          <div class="fb-desc">Custom voice AI agents that understand regional accents, multilingual queries, and handle complex conversations — built for Indian customers.</div>
+          <div class="fb-cta">✦ Book a Demo →</div>
+        </div>
+      </div></div>
+
+      <!-- Card 5: CRM Syncing -->
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-front">
+          <div class="card-bg-img"><img src="./images/crm_sync.jpg" alt="CRM Syncing background"></div>
+          <div class="fm-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></div>
+          <div class="fm-title">CRM Syncing</div>
+          <div class="fm-subtitle">Real-time Data Sync</div>
+          <div class="fm-flip-hint">↻ Hover to learn more</div>
+        </div>
+        <div class="flip-back">
+          <div class="card-bg-img"><!-- Front: hub and spokes network -->
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="26" fill="#4F46E5" opacity="0.55"/>
+              <text x="100" y="107" text-anchor="middle" fill="white" font-size="18">🔗</text>
+              <circle cx="36" cy="46" r="18" fill="#818CF8" opacity="0.4"/><text x="36" y="52" text-anchor="middle" fill="white" font-size="9" font-weight="700">DB</text>
+              <circle cx="164" cy="46" r="18" fill="#818CF8" opacity="0.4"/><text x="164" y="52" text-anchor="middle" fill="white" font-size="9" font-weight="700">CRM</text>
+              <circle cx="28" cy="154" r="18" fill="#818CF8" opacity="0.4"/><text x="28" y="160" text-anchor="middle" fill="white" font-size="9" font-weight="700">API</text>
+              <circle cx="172" cy="154" r="18" fill="#818CF8" opacity="0.4"/><text x="172" y="160" text-anchor="middle" fill="white" font-size="9" font-weight="700">WH</text>
+              <circle cx="100" cy="22" r="14" fill="#F59E0B" opacity="0.45"/><text x="100" y="28" text-anchor="middle" fill="white" font-size="9" font-weight="700">WA</text>
+              <circle cx="100" cy="178" r="14" fill="#10B981" opacity="0.45"/><text x="100" y="184" text-anchor="middle" fill="white" font-size="9" font-weight="700">ERP</text>
+              <line x1="80" y1="86" x2="50" y2="60" stroke="#4F46E5" stroke-width="2" stroke-dasharray="5 3" opacity="0.45"/>
+              <line x1="120" y1="86" x2="150" y2="60" stroke="#4F46E5" stroke-width="2" stroke-dasharray="5 3" opacity="0.45"/>
+              <line x1="80" y1="114" x2="44" y2="140" stroke="#4F46E5" stroke-width="2" stroke-dasharray="5 3" opacity="0.45"/>
+              <line x1="120" y1="114" x2="156" y2="140" stroke="#4F46E5" stroke-width="2" stroke-dasharray="5 3" opacity="0.45"/>
+              <line x1="100" y1="74" x2="100" y2="36" stroke="#4F46E5" stroke-width="2" stroke-dasharray="5 3" opacity="0.45"/>
+              <line x1="100" y1="126" x2="100" y2="164" stroke="#4F46E5" stroke-width="2" stroke-dasharray="5 3" opacity="0.45"/>
+            </svg>
+          </div>
+          <div class="fb-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></div>
+          <div class="fb-title">CRM Syncing</div>
+          <div class="fb-desc">Real-time data synchronization between all your automation tools and CRM systems via webhooks and APIs — keeping your data unified and accurate.</div>
+          <div class="fb-cta">✦ Book a Demo →</div>
+        </div>
+      </div></div>
+
+      <!-- Card 6: Reputation Builder -->
+      <div class="flip-card"><div class="flip-card-inner">
+        <div class="flip-front">
+          <div class="card-bg-img"><img src="./images/reputation.jpg" alt="Reputation Builder background"></div>
+          <div class="fm-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="fm-title">Reputation Builder</div>
+          <div class="fm-subtitle">Automated Review Management</div>
+          <div class="fm-flip-hint">↻ Hover to learn more</div>
+        </div>
+        <div class="flip-back">
+          <div class="card-bg-img"><!-- Front: 5 stars + rating bar -->
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="100" y="85" text-anchor="middle" font-size="52">⭐</text>
+              <text x="34"  y="140" text-anchor="middle" font-size="34">⭐</text>
+              <text x="72"  y="152" text-anchor="middle" font-size="34">⭐</text>
+              <text x="128" y="152" text-anchor="middle" font-size="34">⭐</text>
+              <text x="166" y="140" text-anchor="middle" font-size="34">⭐</text>
+              <rect x="30" y="163" width="140" height="13" rx="6.5" fill="#FDE68A" opacity="0.35"/>
+              <rect x="30" y="163" width="127" height="13" rx="6.5" fill="#F59E0B" opacity="0.65"/>
+              <text x="100" y="192" text-anchor="middle" fill="#D97706" font-size="13" font-weight="800" font-family="Outfit,sans-serif">4.9 / 5.0</text>
+            </svg>
+          </div>
+          <div class="fb-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="fb-title">Reputation Builder</div>
+          <div class="fb-desc">Automated review collection and intelligent response management across Google, Practo, and social platforms — building your credibility effortlessly.</div>
+          <div class="fb-cta">✦ Book a Demo →</div>
+        </div>
+      </div></div>
+
     </div>
   </div>
 </section>
 
-<!-- ── INDUSTRIES ── -->
-<section id="industries" class="section section-alt">
+<!-- ── INDUSTRIES / SECTORS ── -->
+<section id="industries" class="section section-alt sticky-stack-section">
   <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Industries Served</div>
+    <div class="text-center reveal mb-5">
       <h2 class="section-title">Built for <span>Every Sector</span></h2>
-      <p class="section-desc">7+ industries across India with domain-specific AI</p>
+      <p class="section-desc">7+ industries across India transformed with domain-specific AI automation.</p>
     </div>
-    <div class="industries-visual cascade-children">
-      <div class="ind-icon-big">🏥<span>Healthcare</span></div>
-      <div class="ind-icon-big">🎓<span>Education</span></div>
-      <div class="ind-icon-big">💆<span>Personal Care</span></div>
-      <div class="ind-icon-big">🔬<span>Diagnostics</span></div>
-      <div class="ind-icon-big">💪<span>Fitness</span></div>
-      <div class="ind-icon-big">⚖️<span>Legal & CA</span></div>
-      <div class="ind-icon-big">🏠<span>Real Estate</span></div>
-    </div>
-    <!-- Sector detail visual below -->
-    <div class="reveal" style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 40px;box-shadow:var(--shadow-sm);">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-        <div style="text-align:center;">
-          <div style="font-size:2rem;margin-bottom:8px;">🏥</div>
-          <div style="font-weight:700;font-size:.9rem;margin-bottom:4px;">Healthcare</div>
-          <div style="font-size:.8rem;color:var(--text-muted);">Appointment booking, patient follow-ups, lab reports</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:2rem;margin-bottom:8px;">🎓</div>
-          <div style="font-weight:700;font-size:.9rem;margin-bottom:4px;">Education</div>
-          <div style="font-size:.8rem;color:var(--text-muted);">Lead capture, admission queries, fee reminders</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:2rem;margin-bottom:8px;">🏠</div>
-          <div style="font-weight:700;font-size:.9rem;margin-bottom:4px;">Real Estate</div>
-          <div style="font-size:.8rem;color:var(--text-muted);">Property inquiries, site visit scheduling, CRM sync</div>
+
+    <div class="sticky-stack-container">
+      <!-- Card 1: Healthcare -->
+      <div class="sticky-card card-healthcare" style="--stack-index: 1;">
+        <div class="sticky-card-content">
+          <div class="sticky-card-text">
+            <div class="sector-badge">Healthcare & Clinics</div>
+            <h3 class="sector-title">Automated Patient Care & OPD Front Desk</h3>
+            <p class="sector-desc">Streamline patient intake, 24/7 OPD appointment scheduling, lab report dispatch via WhatsApp, and smart post-consultation prescription follow-ups in Hindi & English.</p>
+            <div class="sector-tags">
+              <span>OPD Scheduling</span>
+              <span>WhatsApp Lab Reports</span>
+              <span>Prescription Reminders</span>
+            </div>
+          </div>
+          <div class="sticky-card-media">
+            <img src="./images/sector_healthcare.jpg" alt="Healthcare AI Automation" loading="lazy">
+          </div>
         </div>
       </div>
+
+      <!-- Card 2: Education -->
+      <div class="sticky-card card-education" style="--stack-index: 2;">
+        <div class="sticky-card-content">
+          <div class="sticky-card-text">
+            <div class="sector-badge">Education & Coaching</div>
+            <h3 class="sector-title">24/7 Admissions & Student Lead Capture</h3>
+            <p class="sector-desc">Instantly respond to admission queries on WhatsApp & website, automate counselor appointment booking, fee payment reminders, and student onboarding workflows.</p>
+            <div class="sector-tags">
+              <span>24/7 Lead Capture</span>
+              <span>Counselor Booking</span>
+              <span>Fee Reminders</span>
+            </div>
+          </div>
+          <div class="sticky-card-media">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Education AI Automation" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Real Estate -->
+      <div class="sticky-card card-realestate" style="--stack-index: 3;">
+        <div class="sticky-card-content">
+          <div class="sticky-card-text">
+            <div class="sector-badge">Real Estate & Property</div>
+            <h3 class="sector-title">Smart Site Visit & Lead Qualification</h3>
+            <p class="sector-desc">Qualify buyer budget and location requirements over WhatsApp voice & chat, schedule site visits automatically into sales rep calendars, and sync with your CRM in real time.</p>
+            <div class="sector-tags">
+              <span>Site Visit Booking</span>
+              <span>Lead Qualification</span>
+              <span>Instant CRM Sync</span>
+            </div>
+          </div>
+          <div class="sticky-card-media">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Real Estate AI Automation" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Personal Care -->
+      <div class="sticky-card card-wellness" style="--stack-index: 4;">
+        <div class="sticky-card-content">
+          <div class="sticky-card-text">
+            <div class="sector-badge">Salons & Personal Care</div>
+            <h3 class="sector-title">Automated Booking & Client Retention</h3>
+            <p class="sector-desc">Never miss a salon appointment. AI handles slot availability, sends automated SMS/WhatsApp confirmations, collects 5-star Google reviews, and drives repeat visits.</p>
+            <div class="sector-tags">
+              <span>Slot Booking</span>
+              <span>Review Collection</span>
+              <span>Client Retention</span>
+            </div>
+          </div>
+          <div class="sticky-card-media">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Personal Care AI Automation" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Diagnostics -->
+      <div class="sticky-card card-diagnostics" style="--stack-index: 5;">
+        <div class="sticky-card-content">
+          <div class="sticky-card-text">
+            <div class="sector-badge">Diagnostic Labs</div>
+            <h3 class="sector-title">Home Sample Booking & Report Dispatch</h3>
+            <p class="sector-desc">Automate lab test inquiry handling, home blood sample collection booking, automated PDF test report dispatch via WhatsApp, and patient feedback surveys.</p>
+            <div class="sector-tags">
+              <span>Home Collection</span>
+              <span>Automated Reports</span>
+              <span>Multilingual AI</span>
+            </div>
+          </div>
+          <div class="sticky-card-media">
+            <img src="./images/sector_diagnostics.jpg" alt="Diagnostics AI Automation" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Fitness -->
+      <div class="sticky-card card-fitness" style="--stack-index: 6;">
+        <div class="sticky-card-content">
+          <div class="sticky-card-text">
+            <div class="sector-badge">Gyms & Fitness Centers</div>
+            <h3 class="sector-title">Membership Renewal & Trial Booking</h3>
+            <p class="sector-desc">Convert trial passes into paid gym memberships with AI WhatsApp follow-ups, automate membership renewal alerts, and manage trainer schedules effortlessly.</p>
+            <div class="sector-tags">
+              <span>Trial Pass Booking</span>
+              <span>Membership Renewal</span>
+              <span>Sales Conversion</span>
+            </div>
+          </div>
+          <div class="sticky-card-media">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Fitness AI Automation" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7: Legal & CA -->
+      <div class="sticky-card card-legal" style="--stack-index: 7;">
+        <div class="sticky-card-content">
+          <div class="sticky-card-text">
+            <div class="sector-badge">Legal & CA Firms</div>
+            <h3 class="sector-title">Client Screening & Document Intake</h3>
+            <p class="sector-desc">Automate initial client consultation screening, GST / Tax document collection via secure chat, automated appointment slots for partners, and retainer reminders.</p>
+            <div class="sector-tags">
+              <span>Consultation Screening</span>
+              <span>Document Intake</span>
+              <span>Partner Scheduling</span>
+            </div>
+          </div>
+          <div class="sticky-card-media">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Legal AI Automation" loading="lazy">
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ── PROCESS ── -->
-<section id="process" class="section">
+<!-- ── PROCESS SECTION (Timeline + 360 Rotating Logo) ── -->
+<section id="process" class="section process-redesign-section">
   <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Our Process</div>
+    <div class="text-center reveal mb-5">
       <h2 class="section-title">Live in <span>5 Days</span></h2>
+      <p class="section-desc">Our battle-tested 4-step deployment process to transform your business operations with AI.</p>
     </div>
-    <div class="process-visual-row">
-      <!-- Steps list -->
-      <div class="process-steps-list stagger-children">
-        <div class="psl-item">
-          <div class="psl-num">01</div>
-          <div><div class="psl-title">Discovery & Audit</div><div class="psl-desc">We map your operations and identify the highest-ROI automation target.</div></div>
-        </div>
-        <div class="psl-item">
-          <div class="psl-num">02</div>
-          <div><div class="psl-title">AI Architecture</div><div class="psl-desc">Custom AI pipeline designed for your data, systems & compliance.</div></div>
-        </div>
-        <div class="psl-item">
-          <div class="psl-num">03</div>
-          <div><div class="psl-title">Build & Test</div><div class="psl-desc">Rigorous testing against real-world data for accuracy & speed.</div></div>
-        </div>
-        <div class="psl-item">
-          <div class="psl-num">04</div>
-          <div><div class="psl-title">Deploy & Optimize</div><div class="psl-desc">Go live, monitor performance, and get ongoing ROI reporting.</div></div>
+
+    <div class="process-timeline-layout">
+      <!-- Left Column: 360 Rotating Seevora Logo (Transparent Background) -->
+      <div class="process-logo-col reveal">
+        <div class="logo-rotate-stage">
+          <div class="logo-glow-ring"></div>
+          <img src="./images/seevora_logo_icon.png" alt="Seevora AI Logo" class="rotating-logo-img">
         </div>
       </div>
-      <!-- Process flow SVG visual -->
-      <div class="reveal-right">
-        <div class="img-card" style="background:linear-gradient(135deg,#EEF2FF,#F5F7FF);padding:32px;">
-          <svg viewBox="0 0 340 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Vertical connecting line -->
-            <line x1="60" y1="50" x2="60" y2="380" stroke="#C7D2FE" stroke-width="2" stroke-dasharray="6 4"/>
-            <!-- Step 1 -->
-            <circle cx="60" cy="60" r="24" fill="#4F46E5"/>
-            <text x="60" y="68" text-anchor="middle" fill="white" font-size="18">🔍</text>
-            <rect x="100" y="38" width="220" height="44" rx="10" fill="white" stroke="#E2E8F0"/>
-            <text x="116" y="57" fill="#1E293B" font-size="12" font-weight="700">Discovery</text>
-            <text x="116" y="73" fill="#64748B" font-size="10">Audit + ROI mapping</text>
-            <!-- Step 2 -->
-            <circle cx="60" cy="160" r="24" fill="#818CF8"/>
-            <text x="60" y="168" text-anchor="middle" fill="white" font-size="18">🏗️</text>
-            <rect x="100" y="138" width="220" height="44" rx="10" fill="white" stroke="#E2E8F0"/>
-            <text x="116" y="157" fill="#1E293B" font-size="12" font-weight="700">Architecture</text>
-            <text x="116" y="173" fill="#64748B" font-size="10">Custom AI pipeline design</text>
-            <!-- Step 3 -->
-            <circle cx="60" cy="260" r="24" fill="#F59E0B"/>
-            <text x="60" y="268" text-anchor="middle" fill="white" font-size="18">🧪</text>
-            <rect x="100" y="238" width="220" height="44" rx="10" fill="white" stroke="#E2E8F0"/>
-            <text x="116" y="257" fill="#1E293B" font-size="12" font-weight="700">Build & Test</text>
-            <text x="116" y="273" fill="#64748B" font-size="10">Real-world validation</text>
-            <!-- Step 4 -->
-            <circle cx="60" cy="360" r="24" fill="#10B981"/>
-            <text x="60" y="368" text-anchor="middle" fill="white" font-size="18">🚀</text>
-            <rect x="100" y="338" width="220" height="44" rx="10" fill="white" stroke="#E2E8F0"/>
-            <text x="116" y="357" fill="#1E293B" font-size="12" font-weight="700">Deploy & Optimize</text>
-            <text x="116" y="373" fill="#64748B" font-size="10">Live + ROI monitoring</text>
-            <!-- Badge -->
-            <rect x="180" y="190" width="130" height="36" rx="18" fill="#4F46E5"/>
-            <text x="245" y="213" text-anchor="middle" fill="white" font-size="12" font-weight="700">⚡ Live in 5 Days</text>
-          </svg>
+
+      <!-- Right Column: Vertical Timeline & Interactive Step Cards -->
+      <div class="process-steps-timeline">
+        <!-- Connecting Vertical Line -->
+        <div class="timeline-line"></div>
+
+        <!-- Step 1 -->
+        <div class="timeline-step-row reveal-right">
+          <div class="timeline-node">01</div>
+          <div class="timeline-card">
+            <div class="tc-icon-badge">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div class="tc-text">
+              <h3 class="tc-title">Discovery & Audit</h3>
+              <p class="tc-desc">We map your current operations and identify the highest-ROI automation targets for immediate impact.</p>
+            </div>
+            <div class="tc-arrow">→</div>
+          </div>
         </div>
+
+        <!-- Step 2 -->
+        <div class="timeline-step-row reveal-right">
+          <div class="timeline-node">02</div>
+          <div class="timeline-card">
+            <div class="tc-icon-badge">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="tc-text">
+              <h3 class="tc-title">AI Architecture</h3>
+              <p class="tc-desc">Custom AI pipeline designed specifically for your data, existing systems, and compliance needs.</p>
+            </div>
+            <div class="tc-arrow">→</div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="timeline-step-row reveal-right">
+          <div class="timeline-node">03</div>
+          <div class="timeline-card">
+            <div class="tc-icon-badge">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div class="tc-text">
+              <h3 class="tc-title">Build & Test</h3>
+              <p class="tc-desc">Rigorous stress-testing against real-world scenarios for maximum accuracy, speed, and reliability.</p>
+            </div>
+            <div class="tc-arrow">→</div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="timeline-step-row reveal-right">
+          <div class="timeline-node">04</div>
+          <div class="timeline-card">
+            <div class="tc-icon-badge">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="tc-text">
+              <h3 class="tc-title">Deploy & Optimize</h3>
+              <p class="tc-desc">Go live, monitor system performance in real-time, and track ongoing ROI reporting.</p>
+            </div>
+            <div class="tc-arrow">→</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── TEAM ── -->
-<section id="team" class="section team-section">
-  <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Meet the Team</div>
+  <section id="team" class="section team-section" style="position: relative; overflow: hidden;">
+    <div class="team-bg-icon" style="position: absolute; top: 50%; right: -10%; transform: translateY(-50%); z-index: 0; pointer-events: none;">
+      <svg width="800" height="800" viewBox="0 0 100 100" class="spin-icon">
+        <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.05" stroke-dasharray="2 2" />
+        <polygon points="50,15 77,31 77,69 50,85 23,69 23,31" stroke="var(--primary)" stroke-width="1" fill="none" opacity="0.08" />
+        <circle cx="50" cy="50" r="15" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.1" />
+        <circle cx="50" cy="50" r="30" stroke="var(--primary)" stroke-width="0.5" fill="none" opacity="0.03" stroke-dasharray="4 4" />
+      </svg>
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="text-center reveal">
       <h2 class="section-title">The <span>Minds Behind</span> Seevora</h2>
     </div>
-    <div class="team-grid">
-      <div class="team-card reveal-scale">
+    <div class="team-grid" style="display: flex; justify-content: center; max-width: 380px; margin: 40px auto 0;">
+      <div class="team-card reveal-scale" style="width: 100%;">
         <div class="tc-photo-wrap">
-          <img src="images/chaitanya.png" alt="Chaitanya Panwar — CEO & Founder" class="tc-photo" loading="lazy"/>
-          <span class="tc-role-badge">CEO &amp; Founder</span>
+          <img src="images/Screenshot 2026-07-30 190806.png" alt="Chaitanya Panwar — CEO & Founder" class="tc-photo" loading="lazy"/>
         </div>
         <div class="tc-body">
           <div class="tc-name">Chaitanya Panwar</div>
           <div class="tc-role">Chief Executive Officer &amp; Founder</div>
-          <div class="tc-divider"></div>
-          <div>
-            <span class="tc-tag">🤖 AI Strategy</span>
-            <span class="tc-tag">🚀 Product</span>
-            <span class="tc-tag">💼 B2B</span>
-          </div>
-          <div class="tc-social">
-            <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="tc-social-link">💼</a>
-            <a href="https://www.instagram.com/seevora1/" target="_blank" class="tc-social-link">📸</a>
-            <a href="https://x.com/seevora1" target="_blank" class="tc-social-link">🐦</a>
-            <a href="mailto:info@seevora.in" class="tc-social-link">✉️</a>
-          </div>
-        </div>
-      </div>
-      <div class="team-card reveal-scale" style="transition-delay:.2s">
-        <div class="tc-photo-wrap">
-          <img src="images/sambandh.png" alt="Sambandh Jain — Operations Manager" class="tc-photo" loading="lazy"/>
-          <span class="tc-role-badge" style="background:rgba(245,158,11,.92)">Manager</span>
-        </div>
-        <div class="tc-body">
-          <div class="tc-name">Sambandh Jain</div>
-          <div class="tc-role">Operations Manager</div>
-          <div class="tc-divider"></div>
-          <div>
-            <span class="tc-tag">⚙️ Operations</span>
-            <span class="tc-tag">📋 Client Success</span>
-            <span class="tc-tag">🎯 Delivery</span>
-          </div>
-          <div class="tc-social">
-            <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="tc-social-link">💼</a>
-            <a href="https://www.instagram.com/seevora1/" target="_blank" class="tc-social-link">📸</a>
-            <a href="mailto:info@seevora.in" class="tc-social-link">✉️</a>
-          </div>
         </div>
       </div>
     </div>
@@ -519,70 +685,80 @@
 <!-- ── CONTACT ── -->
 <section id="contact" class="section contact-section">
   <div class="container">
-    <div class="contact-grid">
-      <div class="contact-left reveal-left">
-        <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Let's Build<br><span>Your AI Future</span></h2>
-        <p class="section-desc">Live in 5 days. No commitment required for the first call.</p>
-        <div class="contact-cards">
-          <a href="tel:+918982200895" class="contact-card">
-            <div class="cc-icon">📞</div>
-            <div><div class="cc-label">Phone / WhatsApp</div><div class="cc-value">+91 89822 00895</div></div>
-          </a>
-          <a href="mailto:info@seevora.in" class="contact-card">
-            <div class="cc-icon">✉️</div>
-            <div><div class="cc-label">Email</div><div class="cc-value">info@seevora.in</div></div>
-          </a>
-          <div class="contact-card" style="cursor:default">
-            <div class="cc-icon">📍</div>
-            <div><div class="cc-label">Location</div><div class="cc-value">Indore, Madhya Pradesh</div></div>
-          </div>
-        </div>
-        <div class="social-row" style="margin-top:24px">
-          <a href="https://www.instagram.com/seevora1/" target="_blank" class="social-link"><span>📸</span></a>
-          <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="social-link"><span>💼</span></a>
-          <a href="https://x.com/seevora1" target="_blank" class="social-link"><span>🐦</span></a>
-          <a href="https://www.facebook.com/people/Seevora/61574331010641/" target="_blank" class="social-link"><span>👥</span></a>
-          <a href="https://www.youtube.com/@Seevora1" target="_blank" class="social-link"><span>▶️</span></a>
-        </div>
+          <div style="text-align: center; margin-bottom: 40px;" class="reveal-up">
+        <h2 class="section-title">Contact <span>Us</span></h2>
+        <p class="section-desc" style="max-width: 600px; margin: 0 auto;">Live in 5 days. No commitment required for the first call.</p>
       </div>
-      <div class="contact-right reveal-right">
-        <div class="cr-badge"><span class="badge-dot"></span>Now Accepting New Clients</div>
-        <h3 class="cr-title">Start Your AI<br>Transformation</h3>
+      <div class="contact-grid">
+        <div class="contact-left reveal-left">
+          <div class="contact-cards">
+                      <a href="tel:+918982200895" class="contact-card">
+              <div class="cc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <div class="cc-label">Phone / WhatsApp</div>
+                <div class="cc-value">+91 89822 00895</div>
+              </div>
+            </a>
+            <a href="mailto:info@seevora.in" class="contact-card">
+              <div class="cc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </div>
+              <div>
+                <div class="cc-label">Email</div>
+                <div class="cc-value">info@seevora.in</div>
+              </div>
+            </a>
+            <div class="contact-card" style="cursor:default">
+              <div class="cc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div class="cc-label">Location</div>
+                <div class="cc-value">Indore, Madhya Pradesh</div>
+              </div>
+            </div>
+        </div>
+                  <div class="social-row" style="margin-top:24px">
+            <a href="https://www.instagram.com/seevora1/" target="_blank" class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></span></a>
+            <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></span></a>
+            <a href="https://x.com/seevora1" target="_blank" class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></span></a>
+            <a href="https://www.facebook.com/people/Seevora/61574331010641/" target="_blank"
+              class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span></a>
+            <a href="https://www.youtube.com/@Seevora1" target="_blank" class="social-link"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></span></a>
+          </div>
+      </div>
+              <div class="contact-right reveal-right">
+          <h3 class="cr-title">Start Your AI<br>Transformation</h3>
         <p class="cr-desc">Book a free 30-min call with Chaitanya. No jargon, just real solutions.</p>
-        <a href="https://wa.me/918982200895?text=Hi%20Seevora!%20I%27m%20interested%20in%20AI%20automation." target="_blank" class="cr-whatsapp">💬 Chat on WhatsApp</a>
-        <a href="tel:+918982200895" class="cr-call">📞 +91 89822 00895</a>
+                  <a href="https://wa.me/918982200895?text=Hi%20Seevora!%20I%27m%20interested%20in%20AI%20automation."
+            target="_blank" class="cr-whatsapp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg> Chat on WhatsApp</a>
+          <a href="tel:+918982200895" class="cr-call"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +91 89822 00895</a>
         <div class="cr-info">Seevora Private Limited · CIN: U62011MP2026PTC082651<br>Indore, Madhya Pradesh · info@seevora.in</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="footer-logo"><span class="logo-s">S</span>eevora</span>
-        <p>Custom AI SaaS, intelligent automations, and AI products designed around the way your business actually works.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/seevora1/" target="_blank" class="footer-social-link">📸</a>
-          <a href="https://www.linkedin.com/company/seevora/" target="_blank" class="footer-social-link">💼</a>
-          <a href="https://x.com/seevora1" target="_blank" class="footer-social-link">🐦</a>
-          <a href="https://www.facebook.com/people/Seevora/61574331010641/" target="_blank" class="footer-social-link">👥</a>
-          <a href="https://www.youtube.com/@Seevora1" target="_blank" class="footer-social-link">▶️</a>
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 500px; margin: 0 auto 24px auto;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px;">
+          <img src="images/logo-transparent.png" alt="Seevora Logo" style="height: 48px; filter: brightness(0) invert(1);">
+          <h2 style="color: white; font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 800; margin: 0;">Seevora</h2>
         </div>
+        <p style="color: rgba(255, 255, 255, 0.45); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+          Custom AI SaaS, intelligent automations, and AI products designed around the way your business actually works.
+        </p>
       </div>
-      <div class="footer-col"><h4>Modules</h4><ul class="footer-links"><li><a href="#modules">AI Receptionist</a></li><li><a href="#modules">Lead Intake Bot</a></li><li><a href="#modules">Auto Scheduler</a></li><li><a href="#modules">Voice Assistants</a></li><li><a href="#modules">CRM Syncing</a></li><li><a href="#modules">Reputation Builder</a></li></ul></div>
-      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="#industries">Healthcare</a></li><li><a href="#industries">Education</a></li><li><a href="#industries">Personal Care</a></li><li><a href="#industries">Diagnostics</a></li><li><a href="#industries">Fitness & Gyms</a></li><li><a href="#industries">Real Estate</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="#about">About</a></li><li><a href="#why">Why Seevora</a></li><li><a href="#team">Team</a></li><li><a href="#contact">Contact</a></li><li><a href="https://seevora.in" target="_blank">Website</a></li></ul></div>
+      <div class="footer-bottom" style="display: flex; flex-direction: column; align-items: center; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; gap: 8px;">
+        <p style="color: rgba(255,255,255,0.3); font-size: 0.85rem; margin: 0;">© 2026 Seevora Private Limited. All rights reserved. Indore, India.</p>
+        <p class="footer-cin" style="margin: 0;">CIN: U62011MP2026PTC082651</p>
+      </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Seevora Private Limited. All rights reserved. Indore, India.</p>
-      <p class="footer-cin">CIN: U62011MP2026PTC082651</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <script>
 /* 1. NAVBAR */
@@ -597,22 +773,10 @@ window.addEventListener('scroll',()=>{
 navToggle.addEventListener('click',()=>navbar.classList.toggle('menu-open'));
 
 /* 2. CANVAS */
-const canvas=document.getElementById('heroCanvas');
-const ctx=canvas.getContext('2d');
-let mouse={x:-1e4,y:-1e4};
-function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
-resize();window.addEventListener('resize',resize);
-const hero=document.getElementById('hero');
-hero.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
-hero.addEventListener('mouseleave',()=>{mouse.x=-1e4;mouse.y=-1e4;});
-class P{constructor(){this.reset();}reset(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.vx=(Math.random()-.5)*.6;this.vy=(Math.random()-.5)*.6;this.r=Math.random()*2+1;this.a=Math.random()*.35+.1;this.c=Math.random()>.7?'#F59E0B':'#4F46E5';}update(){const dx=this.x-mouse.x,dy=this.y-mouse.y,d=Math.hypot(dx,dy);if(d<100){this.x+=dx/d*2.5;this.y+=dy/d*2.5;}this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>canvas.width)this.vx*=-1;if(this.y<0||this.y>canvas.height)this.vy*=-1;}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.c;ctx.globalAlpha=this.a;ctx.fill();ctx.globalAlpha=1;}}
-const pts=Array.from({length:85},()=>new P());
-function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);pts.forEach(p=>{p.update();p.draw();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.hypot(dx,dy);if(d<130){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(79,70,229,${(1-d/130)*.18})`;ctx.lineWidth=.8;ctx.stroke();}}requestAnimationFrame(draw);}
-draw();
 
 /* 3. TYPEWRITER */
 const tw=document.getElementById('typewriterText');
-const txt="Deploy custom AI automation in 5 days. 24/7 AI receptionist, WhatsApp bots & booking systems — built for India.";
+const txt="Seevora helps businesses automate their operations, accelerate sales, and scale effortlessly — all powered by intelligent AI.";
 let ci=0;const cur=document.createElement('span');cur.className='typewriter-cursor';tw.appendChild(cur);
 function type(){if(ci<txt.length){tw.insertBefore(document.createTextNode(txt[ci]),cur);ci++;setTimeout(type,ci===1?900:30);}}
 setTimeout(type,1200);
