@@ -116,8 +116,8 @@
     <div class="hero-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,19,43,0.7) 0%, rgba(11,19,43,0.85) 100%); z-index: 1;"></div>
     <div class="hero-content">
       <h1 class="hero-title">
-        Turn Your Business<br>
-        <span class="gradient-text">Processes</span> into<br>
+        Turn Your Business<br class="desktop-only">
+        <span class="gradient-text">Processes</span> into<br class="desktop-only">
         Fusion With <span style="color: #ffffff;">AI</span>
       </h1>
       <p class="hero-subtitle" id="typewriterText"></p>
@@ -742,7 +742,22 @@ window.addEventListener('scroll', () => {
   if (window.scrollY > 30) navbar.classList.add('scrolled');
   else navbar.classList.remove('scrolled');
 });
-navToggle.addEventListener('click', () => navbar.classList.toggle('menu-open'));
+if (navToggle) {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navbar.classList.toggle('menu-open');
+  });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    navbar.classList.remove('menu-open');
+  });
+});
+document.addEventListener('click', (e) => {
+  if (navbar && !navbar.contains(e.target) && navbar.classList.contains('menu-open')) {
+    navbar.classList.remove('menu-open');
+  }
+});
 
 /* 2. TYPEWRITER */
 const tw = document.getElementById('typewriterText');
